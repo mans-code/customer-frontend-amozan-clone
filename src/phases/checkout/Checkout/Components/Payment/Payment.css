@@ -1,0 +1,18 @@
+.payment{
+    width: 50%;
+    margin: auto;
+  }
+
+  .payment__title {
+    margin-right: 10px;
+    padding: 10px;
+    border-bottom: 2px solid lightgray;
+  }
+
+  @media (max-width: 499px) {
+    .payment{
+        width: 100%;
+        margin: 0;
+    }
+ 
+}

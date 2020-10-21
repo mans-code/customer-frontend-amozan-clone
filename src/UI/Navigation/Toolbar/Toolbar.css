@@ -1,0 +1,91 @@
+.toolbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #131921;
+  display: flex;
+  flex-direction: column;
+  z-index: 90;
+}
+
+.toolbar__top {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.toolbar__top nav {
+  height: 100%;
+}
+
+.toolbar__topLogo {
+  height: 80%;
+}
+
+.toolbar__Search {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.toolbar__topSearchInput {
+  height: 12px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.toolbar__topSearchIcon {
+  background-color: #cd9042;
+  padding: 5px;
+  height: 22px !important;
+}
+
+.toolbar__topBasket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  margin-top: -2px;
+  margin-left: 5px;
+  margin-top: 7px;
+  z-index: 90;
+}
+
+.toolbar__topBasketCount {
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: -21px;
+  color: #7d8185;
+  text-decoration: none;
+  background-color: white;
+  z-index: 91;
+}
+
+.toolbar__phoneOnly {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .toolbar {
+      height: 90px;
+  }
+  .toolbar__top{
+    height: 50px;
+  }
+  .toolbar__desktopOnly {
+    display: none;
+  }
+  .toolbar__bottom {
+    display: none;
+  }
+  .toolbar__phoneOnly {
+    display: flex;
+  }
+}
