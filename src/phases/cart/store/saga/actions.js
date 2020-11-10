@@ -24,7 +24,6 @@ export function* updateCart(action, cartAction) {
   const customerId = yield yieldCustomerId();
   const reqBody = getRequestBody(action, cartAction);
   const url = `carts/${customerId}`;
-  console.log(reqBody)
   try {
     const response = yield axios.patch(url, reqBody);
     const data = mapCartResponse(response.data);

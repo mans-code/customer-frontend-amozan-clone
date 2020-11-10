@@ -4,7 +4,13 @@ body {
   font-family: "Open Sans", sans-serif;
   position: relative;
   min-height: 100vh;
-  min-width: 100vw;
+  max-width: 100vw;
+}
+
+.root{
+  min-height: 100vh;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 html{

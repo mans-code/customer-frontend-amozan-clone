@@ -11,7 +11,7 @@ import orderReducer from "./phases/orders/store/reducer/reducer";
 import authReducer from "./phases/auth/store/reducer/reducer";
 import checkoutReducer from "./phases/checkout/store/reducer/reducer";
 
-import watchAuth from "./phases/checkout/store/saga/watch";
+import watchAuth from "./phases/auth/store/saga/watch";
 import watchCart from "./phases/cart/store/saga/watch";
 import watchOrder from "./phases/orders/store/saga/watch";
 import watchCheckout from "./phases/checkout/store/saga/watch";

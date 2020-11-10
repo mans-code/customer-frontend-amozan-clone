@@ -2,35 +2,34 @@ import * as actionTypes from "../action/actionTypes";
 import { updateObject } from "../../../../shared/utility";
 
 const initialState = {
-  checkoutLoading: false,
-  purchaseLoading: false,
+  checkoutLoading: true,
+  purchaseLoading: true,
+  purchasing: false,
   addressesLoding: false,
-  stripePublicKey: null,
-  
+  purchaseError: null,
+  nextStep: null,
   shippingAddressesList: [],
   chosenShippingAddres: null,
+  stripeCustomerToken: null,
+  paymentInfo: null,
 };
 
 const checkoutStart = (state, action) => {
-  return updateObject(state, { checkoutLoading: true });
+  return updateObject(state, { checkoutLoading: true, purchasing: true });
 };
 
-const setStripeKey = (state, action) => {
-  return updateObject(state, { stripePublicKey: action.stripePublicKey });
+const checkoutCanceled = (state, action) => {
+  return updateObject(state, { chosenShippingAddres: null, purchasing: false });
 };
 
-const purchaseProductStart = (state, action) => {
-  return updateObject(state, { purchaseLoading: true });
+const checkoutSuccessed = (state, action) => {
+  return updateObject(state, { checkoutLoading: false });
 };
 
-const purchaseProductSuccess = (state, action) => {
+const setNextStep = (state, action) => {
   return updateObject(state, {
-    purchaseLoading: false,
+    nextStep: action.nextStep,
   });
-};
-
-const purchaseProductFail = (state, action) => {
-  return updateObject(state, { purchaseLoading: false });
 };
 
 const fetchShippingAddressesStart = (state, action) => {
@@ -45,21 +44,50 @@ const setShippingAddresses = (state, action) => {
 };
 
 const setChosenShippingAddress = (state, action) => {
-    return updateObject(state, { chosenShippingAddres: action.shippingAddress}); 
-}
+  return updateObject(state, { chosenShippingAddres: action.shippingAddress });
+};
+
+const setStripeCustomerToken = (state, action) => {
+  return updateObject(state, { stripeCustomerToken: action.token });
+};
+
+const purchaseProductStart = (state, action) => {
+  return updateObject(state, { purchaseLoading: true });
+};
+
+const purchaseProductSuccess = (state, action) => {
+  return updateObject(state, {
+    purchaseLoading: false,
+    paymentInfo: action.paymentInfo,
+    purchasing: false,
+  });
+};
+
+const purchaseProductFail = (state, action) => {
+  return updateObject(state, {
+    purchaseLoading: false,
+    purchaseError: action.error,
+  });
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.CHECKOUT_START:
-      return checkoutStart();
-    case actionTypes.SET_STRIPE_PUBLIC_KEY:
-      return setStripeKey(state, action);
+      return checkoutStart(state, action);
+    case actionTypes.CHECKOUT_SUCCESSED:
+      return checkoutSuccessed(state, action);
+    case actionTypes.CHECKOUT_CANCELED:
+      return checkoutCanceled(state, action);
+    case actionTypes.SET_NEXT_STEP:
+      return setNextStep(state, action);
     case actionTypes.FETCH_SHIPPING_ADDRESSES_START:
-      return fetchShippingAddressesStart();
+      return fetchShippingAddressesStart(state, action);
     case actionTypes.SET_SHIPPING_ADDRESSES:
       return setShippingAddresses(state, action);
-      case actionTypes.SET_CHOSEN_SHIPPING_ADDRESS:
-         return setChosenShippingAddress(state, action)
+    case actionTypes.SET_CHOSEN_SHIPPING_ADDRESS:
+      return setChosenShippingAddress(state, action);
+    case actionTypes.SET_STRIPE_CUSTOMER_TOKEN:
+      return setStripeCustomerToken(state, action);
     case actionTypes.PURCHASE_CART_START:
       return purchaseProductStart(state, action);
     case actionTypes.PURCHASE_CART_SUCCESS:

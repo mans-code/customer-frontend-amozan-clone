@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import Button from '../../../../../UI/Button/Button';
-import Spinner from '../../../../../UI/Spinner/Spinner';
 import Input from '../../../../../UI/Input/Input';
 import { updateObject, checkValidity } from '../../../../../shared/utility';
 import {setChosenShippingAddress} from "../../../store/action/actions";
@@ -151,9 +149,6 @@ class ContactData extends Component {
                 <Button btnType="success" onClick={this.nextHandler} disabled={!this.state.formIsValid}>NEXT</Button>
             </form>
         );
-        if ( this.props.loading ) {
-            form = <Spinner />;
-        }
         return (
             <div className="address">
                 <h4>Enter your Address Data</h4>
@@ -163,15 +158,10 @@ class ContactData extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-    }
-};
-
 const mapDispatchToProps = dispatch => {
     return {
         onChoosingAddres: (address) => setChosenShippingAddress(address)
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContactData);
+export default connect(null, mapDispatchToProps)(ContactData);

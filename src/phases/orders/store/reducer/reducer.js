@@ -7,6 +7,30 @@ const initialState = {
     {
       id: "12234545",
       totalPrice: 100.52,
+      date: "September 17th 2020, 10:40am",
+      basket: [
+        {
+          sku: "12234545",
+          title: "The Lean startup: new constant Innovation",
+          price: 11.22,
+          rating: 5,
+          image:
+            "https://m.media-amazon.com/images/I/81Pi4nhjlwL._AC_UY327_FMwebp_QL65_.jpg",
+        },
+        {
+          sku: "12234545",
+          title: "The Lean startup: new constant Innovation",
+          price: 11.22,
+          rating: 5,
+          image:
+            "https://m.media-amazon.com/images/I/81Pi4nhjlwL._AC_UY327_FMwebp_QL65_.jpg",
+        },
+      ],
+    },
+    {
+      id: "12234545",
+      totalPrice: 100.52,
+      date: "September 17th 2020, 10:40am",
       basket: [
         {
           sku: "12234545",

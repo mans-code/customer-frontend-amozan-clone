@@ -6,12 +6,9 @@ import './Order.css';
 function Order({ order }) {
     return (
       <div className="order">
-        <h2>Order</h2>
-        <p>{
-        //moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")
-        }</p>
-        <p className="order__id">
-          <small>{order.id}</small>
+        <h4>Order Number: <span className="order__id"> {order.id}</span></h4>
+        <p>
+          {order.date}
         </p>
   
         {order.basket?.map((item, i) => (
@@ -33,7 +30,7 @@ function Order({ order }) {
           displayType={"text"}
           thousandSeparato={true}
           prefix={"$"}
-          renderText={(val) => <h3>Order Total: {val}</h3>}
+          renderText={(val) => <h3 className="order__total">Order Total: {val}</h3>}
         />
       </div>
     );

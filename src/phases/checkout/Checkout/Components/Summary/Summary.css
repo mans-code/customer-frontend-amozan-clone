@@ -3,16 +3,33 @@
     margin: auto;
   }
 
+  .summary > p{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+
+  .summary__button {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
   .summary__title {
     margin-right: 10px;
     padding: 10px;
     border-bottom: 2px solid lightgray;
   }
 
-  @media (max-width: 499px) {
+  @media (max-width: 790px) {
     .summary{
         width: 100%;
         margin: 0;
     }
- 
+}
+
+@media (max-width: 380px) {
+  .summary > p{
+    margin: 35px 0;;
+  }
 }

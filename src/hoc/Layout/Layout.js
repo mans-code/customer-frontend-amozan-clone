@@ -36,7 +36,7 @@ class Layout extends Component {
         />
         <main className="layout__content">{this.props.children}</main>
         <footer className="layout__footer">
-          <Logo height={30} />
+          <Logo height={32} />
         </footer>
       </Aux>
     );

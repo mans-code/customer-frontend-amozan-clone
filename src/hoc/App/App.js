@@ -63,7 +63,7 @@ class App extends Component {
       app = routes;
     }
 
-    return <div>{app}</div>;
+    return app;
   }
 }
 

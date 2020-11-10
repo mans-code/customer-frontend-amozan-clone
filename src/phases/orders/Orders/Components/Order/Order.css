@@ -5,16 +5,50 @@
     padding: 10px;
     margin: 10px auto;
     box-sizing: border-box;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    position: relative;
+    outline: 1px solid rgb(223, 217, 217);
 }
 
-.order h3{
+.order h4{
     margin-top: 30px;
     margin-left: 10px;
+    margin-bottom: 30px;
 }
+.order > p{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 14px;
+}
+
+.order__total{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 @media (max-width: 700px) {
+
     .order{
         width: 100%;
         margin: 10px 0;
+        margin-bottom: 40px;
+        position: initial
+    }
+    
+    .order h4{
+        margin-bottom: 0px;
+    }
+    .order > p{
+        position: unset;
+        margin-top: 2px;
+        margin-bottom: 20px;
+        margin-left: 27px;
+        font-size: 15px;
+        
     }
 
 }

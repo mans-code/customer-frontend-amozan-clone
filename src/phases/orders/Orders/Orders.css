@@ -2,21 +2,33 @@
     padding: 20px 80px;
     width: 65%;
     margin: auto;
+    max-width: 1200px;
 }
-
-
 
 .orders >  h1{
     margin: 30px;
     border-bottom: 2px solid lightgray;
 }
 
-
-
 @media (max-width: 780px) {
     .orders{
         width: 95%;
         padding: 20px 10px;
         margin-left: 0;
+    }
+
+    .orders >  h1{
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 359px){
+    .orders{
+        padding: 100px;
+        background-color: black;
+    }
+    .orders >  h1{
+       margin-top: 10px;
     }
 }

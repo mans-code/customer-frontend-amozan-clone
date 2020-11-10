@@ -24,7 +24,7 @@ function Review({ basket, nextStep }) {
         ))}
       </div>
 
-      <div className="review__confirm">
+      <div className="review__button">
         <Button onClick={nextStep} btnType="success">
           CONFIRM
         </Button>

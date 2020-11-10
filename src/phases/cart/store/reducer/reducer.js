@@ -9,7 +9,6 @@ const initialState = {
 };
 
 const setCart = (state, action) => {
-  console.log(action, "setCart");
   return updateObject(state, {
     basket: action.payload.cart,
     totalPrice: action.payload.totalPrice,

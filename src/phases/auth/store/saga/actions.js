@@ -1,7 +1,7 @@
 import { put, call, delay } from "redux-saga/effects";
-import axios from "../../axios";
+import axios from "axios";
 
-import * as actions from "../actions/index";
+import * as actions from "../action/actions";
 
 export function* logout(action) {
   yield call([localStorage, "removeItem"], "token");

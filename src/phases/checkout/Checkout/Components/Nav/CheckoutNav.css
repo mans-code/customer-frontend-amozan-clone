@@ -1,0 +1,43 @@
+.MuiPaper-root {
+  width: 90%;
+  margin-bottom: 65px !important;
+}
+
+.MuiStepper-root {
+  padding-top: 40px !important;
+}
+.MuiStepLabel-labelContainer, MuiStepLabel-label{
+    padding: 0 !important;
+}
+.MuiStepIcon-text {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+.MuiStepLabel-active,
+.MuiStepLabel-completed {
+  font-weight: 700 !important;
+}
+
+@media (max-width: 510px) {
+  .MuiStepper-root {
+    padding: 40px 0px !important;
+    margin-bottom: 25px !important;
+    margin-left: 10px;
+  }
+
+  .MuiStepConnector-line {
+    display: none !important;
+    border-bottom: 0px;
+  }
+}
+
+@media (max-width: 361px) {
+  .MuiStep-root {
+    margin: 0;
+    padding: 0;
+  }
+  .MuiStepLabel-root {
+    margin-left: 10px;
+  }
+}

@@ -8,4 +8,6 @@ export default function* watchCheckout() {
     actionTypes.FETCH_SHIPPING_ADDRESSES,
     action.fetchShippingAddresses
   );
+  yield takeLatest(actionTypes.INIT_PURCHASE_CART, action.checkoutComplete);
+  yield takeLatest(actionTypes.CHECKOUT_CANCELED, action.checkoutCanceled);
 }
